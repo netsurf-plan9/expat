@@ -1,0 +1,42 @@
+</$objtype/mkfile
+
+LIB=libexpat.$O.a
+
+OBJ=\
+	xmlparse.$O\
+	xmlrole.$O\
+	xmltok.$O\
+	xmltok_impl.$O\
+	xmltok_ns.$O
+
+HFILES=\
+	../expat_config.h\
+	ascii.h\
+	asciitab.h\
+	expat.h\
+	expat_external.h\
+	iasciitab.h\
+	internal.h\
+	latin1tab.h\
+	nametab.h\
+	siphash.h\
+	utf8tab.h\
+	winconfig.h\
+	xmlrole.h\
+	xmltok.h\
+	xmltok_impl.h\
+	
+
+<../../nsport.mk
+
+CFLAGS=\
+	-B\
+	-I.\
+	-I..\
+#	-I../xmlwf\
+	-DHAVE_EXPAT_CONFIG_H \
+	-D_POSIX_SOURCE \
+	-DHAVE_UNISTD_H \
+	-DXML_POOR_ENTROPY \
+
+<../../nsportlib.mk
